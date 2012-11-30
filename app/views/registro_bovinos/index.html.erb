@@ -1,0 +1,67 @@
+<h1>Listing registro_bovinos</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th>Id</th>
+    <th>Crotal</th>
+    <th>Nacimiento</th>
+    <th>Sexo</th>
+    <th>Raza</th>
+    <th>Alta explotacion</th>
+    <th>Causa alta</th>
+    <th>Vendedor nombre</th>
+    <th>Vendedor nif</th>
+    <th>Vendedor codigo</th>
+    <th>Vendedor explotacion</th>
+    <th>Crotal madre</th>    
+    <th>Baja explotacion</th>
+    <th>Causa baja</th>
+    <th>Comprador nombre</th>
+    <th>Comprador nif</th>
+    <th>Comprador codigo</th>    
+    <th>Traslado serie</th>
+    <th>Traslado numero</th>
+    <th>Balance fecha</th>
+    <th>Balance numero cabezas</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @registro_bovinos.each do |registro_bovino| %>
+  <tr>
+    <td><%= link_to 'Show', registro_bovino %></td>
+    <td><%= link_to 'Edit', edit_registro_bovino_path(registro_bovino) %></td>
+    <td><%= registro_bovino.id %></td>
+    <td><%= registro_bovino.crotal %></td>
+    <td><%= registro_bovino.nacimiento %></td>
+    <td><%= registro_bovino.sexo %></td>
+    <td><%= registro_bovino.raza %></td>
+    <td><%= registro_bovino.alta_explotacion %></td>
+    <td><%= registro_bovino.causa_alta %></td>
+    <td><%= registro_bovino.vendedor_nombre %></td>
+    <td><%= registro_bovino.vendedor_nif %></td>
+    <td><%= registro_bovino.vendedor_codigo %></td>
+    <td><%= registro_bovino.vendedor_explotacion %></td>
+    <td><%= registro_bovino.crotal_madre %></td>    
+    <td><%= registro_bovino.baja_explotacion %></td>
+    <td><%= registro_bovino.causa_baja %></td>
+    <td><%= registro_bovino.comprador_nombre %></td>
+    <td><%= registro_bovino.comprador_nif %></td>
+    <td><%= registro_bovino.comprador_codigo %></td>    
+    <td><%= registro_bovino.traslado_serie %></td>
+    <td><%= registro_bovino.traslado_numero %></td>
+    <td><%= registro_bovino.balance_fecha %></td>
+    <td><%= registro_bovino.balance_numero_cabezas %></td>
+    <td><%= link_to 'Show', registro_bovino %></td>
+    <td><%= link_to 'Edit', edit_registro_bovino_path(registro_bovino) %></td>
+    <td><%= link_to 'Destroy', registro_bovino, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Registro bovino', new_registro_bovino_path %>

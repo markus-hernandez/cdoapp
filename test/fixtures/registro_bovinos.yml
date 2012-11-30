@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  crotal: MyString
+  nacimiento: 2012-11-30
+  sexo: MyString
+  raza: MyString
+  causa_alta: MyString
+  vendedor_nombre: MyString
+  vendedor_nif: MyString
+  vendedor_codigo: MyString
+  vendedor_explotacion: MyString
+  crotal_madre: MyString
+  alta_explotacion: 2012-11-30
+  causa_baja: MyString
+  comprador_nombre: MyString
+  comprador_nif: MyString
+  comprador_codigo: MyString
+  baja_explotacion: 2012-11-30
+  traslado_serie: MyString
+  traslado_numero: MyString
+  balance_fecha: 2012-11-30
+  balance_numero_cabezas: 1
+
+two:
+  id: 1
+  crotal: MyString
+  nacimiento: 2012-11-30
+  sexo: MyString
+  raza: MyString
+  causa_alta: MyString
+  vendedor_nombre: MyString
+  vendedor_nif: MyString
+  vendedor_codigo: MyString
+  vendedor_explotacion: MyString
+  crotal_madre: MyString
+  alta_explotacion: 2012-11-30
+  causa_baja: MyString
+  comprador_nombre: MyString
+  comprador_nif: MyString
+  comprador_codigo: MyString
+  baja_explotacion: 2012-11-30
+  traslado_serie: MyString
+  traslado_numero: MyString
+  balance_fecha: 2012-11-30
+  balance_numero_cabezas: 1

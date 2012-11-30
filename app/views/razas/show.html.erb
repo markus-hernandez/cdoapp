@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @raza.id %>
+</p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @raza.nombre %>
+</p>
+
+<p>
+  <b>Codigo:</b>
+  <%= @raza.codigo %>
+</p>
+
+
+<%= link_to 'Edit', edit_raza_path(@raza) %> |
+<%= link_to 'Back', razas_path %>

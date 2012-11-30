@@ -1,0 +1,27 @@
+<h1>Listing razas</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Codigo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @razas.each do |raza| %>
+  <tr>
+    <td><%= raza.id %></td>
+    <td><%= raza.nombre %></td>
+    <td><%= raza.codigo %></td>
+    <td><%= link_to 'Show', raza %></td>
+    <td><%= link_to 'Edit', edit_raza_path(raza) %></td>
+    <td><%= link_to 'Destroy', raza, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Raza', new_raza_path %>

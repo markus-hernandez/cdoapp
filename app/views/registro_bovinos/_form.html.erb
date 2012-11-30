@@ -1,0 +1,124 @@
+<%= form_for(@registro_bovino) do |f| %>
+  <% if @registro_bovino.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registro_bovino.errors.count, "error") %> prohibited this registro_bovino from being saved:</h2>
+
+      <ul>
+      <% @registro_bovino.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="actions">
+    <%= f.submit :onmousedown => 'this.title=1', :onclick => 'if(this.title!=1){return false;}' %>
+  </div>
+
+  <div class="field">
+    <!--<%= f.label :id %><br />
+    <%= f.number_field :id %> -->
+    <%= f.hidden_field :id %>    
+  </div>
+  <div class="field">
+    <%= f.label :crotal %><br />
+    <%= f.text_field :crotal %>
+  </div>
+  <div class="field">
+    <%= f.label :nacimiento %><br />
+    <%= f.date_select :nacimiento %>
+  </div>
+  <div class="field">
+    <%= f.label :sexo %><br />
+    <!-- <%= f.text_field :sexo %> -->    
+    <%= f.radio_button :sexo, 'M' , {:checked => true}%> 
+    <%= f.label :sexo, 'M', :value => 'M' %>
+    <%= f.radio_button :sexo, 'H' %>
+    <%= f.label :sexo, 'H', :value => 'H' %>
+  </div>
+  <div class="field">
+    <%= f.label :raza %><br />
+    <!--<%= f.text_field :raza %>-->
+    <%= f.collection_select :raza, Raza.find(:all, :order => "nombre ASC"), :codigo, :nombre, {:include_blank => true} %>
+  </div>
+  <div class="field">
+    <%= f.label :alta_explotacion %><br />
+    <%= f.date_select :alta_explotacion %>
+  </div>
+  <div class="field">
+    <%= f.label :causa_alta %><br />
+    <!--<%= f.text_field :causa_alta %>-->
+    <%= f.radio_button :causa_alta, 'C' , {:checked => true}%> 
+    <%= f.label :causa_alta, 'Compra', :value => 'C' %>
+    <%= f.radio_button :causa_alta, 'N' %>
+    <%= f.label :causa_alta, 'Nacimiento', :value => 'N' %>
+    <%= f.radio_button :causa_alta, 'R' %>
+    <%= f.label :causa_alta, 'Reposicion temporal', :value => 'R' %>    
+  </div>
+  <div class="field">
+    <%= f.label :vendedor_nombre %><br />
+    <%= f.text_field :vendedor_nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :vendedor_nif %><br />
+    <%= f.text_field :vendedor_nif %>
+  </div>
+  <div class="field">
+    <%= f.label :vendedor_codigo %><br />
+    <%= f.text_field :vendedor_codigo %>
+  </div>
+  <div class="field">
+    <%= f.label :vendedor_explotacion %><br />
+    <%= f.text_field :vendedor_explotacion %>
+  </div>
+  <div class="field">
+    <%= f.label :crotal_madre %><br />
+    <%= f.text_field :crotal_madre %>
+  </div>
+  <div class="field">
+    <%= f.label :baja_explotacion %><br />
+    <%= f.date_select :baja_explotacion, :include_blank => true %>
+  </div>
+  <div class="field">
+    <%= f.label :causa_baja %><br />
+    <!--<%= f.text_field :causa_baja %>-->
+    <%= f.radio_button :causa_baja, 'S' %> 
+    <%= f.label :causa_baja, 'Venta para sacrificio', :value => 'S' %>
+    <%= f.radio_button :causa_baja, 'V' %>
+    <%= f.label :causa_baja, 'Venta para vida', :value => 'V' %>
+    <%= f.radio_button :causa_baja, 'T' %>
+    <%= f.label :causa_baja, 'Baja temporal', :value => 'T' %>    
+  </div>
+  <div class="field">
+    <%= f.label :comprador_nombre %><br />
+    <%= f.text_field :comprador_nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :comprador_nif %><br />
+    <%= f.text_field :comprador_nif %>
+  </div>
+  <div class="field">
+    <%= f.label :comprador_codigo %><br />
+    <%= f.text_field :comprador_codigo %>
+  </div>  
+  <div class="field">
+    <%= f.label :traslado_serie %><br />
+    <%= f.text_field :traslado_serie %>
+  </div>
+  <div class="field">
+    <%= f.label :traslado_numero %><br />
+    <%= f.text_field :traslado_numero %>
+  </div>
+  <div class="field">
+    <%= f.label :balance_fecha %><br />
+    <%= f.date_select :balance_fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :balance_numero_cabezas %><br />
+    <%= f.number_field :balance_numero_cabezas %>
+  </div>
+  <div class="actions">
+    <%= f.submit :onmousedown => 'this.title=1', :onclick => 'if(this.title!=1){return false;}' %>    
+  </div>
+<% end %>
+<!-- <input type="submit" name="mybutton" onmousedown="this.title=1" onclick="if(this.title!=1){return false;}" value="Submit my Form" /> -->
