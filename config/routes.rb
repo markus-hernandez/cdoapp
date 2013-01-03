@@ -1,12 +1,21 @@
 CdoApp::Application.routes.draw do
-  resources :razas
-
 
   resources :registro_bovinos
 
+  resources :razas
 
   resources :users
 
+  resource :admins do
+    collection do      
+      get 'index'
+      get 'data'      
+    end
+  end
+
+  root :to => 'registro_bovinos#index'
+
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <script src="/javascripts/codebase/dhtmlxcommon.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/javascripts/codebase/dhtmlxgrid.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/javascripts/codebase/dhtmlxgridcell.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/javascripts/codebase/ext/dhtmlxgrid_filter.js" type="text/javascript" charset="utf-8"></script>
+        <link rel="stylesheet" href="/javascripts/codebase/dhtmlxgrid.css" type="text/css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="/javascripts/codebase/skins/dhtmlxgrid_dhx_skyblue.css" type="text/css" media="screen" charset="utf-8">
+    </head>
+    <body>
+        <%= link_to 'Volver', registro_bovinos_path %>
+        <div id="grid_here" style="width:850px; height:600px;">
+        </div>
+        <script type="text/javascript" charset="utf-8">
+            var grid = new dhtmlXGridObject("grid_here");
+            grid.setImagePath("/javascripts/codebase/imgs/");
+            grid.setHeader("Crotal, Nacimiento, Sexo, Raza, Alta explotacion, Causa alta, Vendedor nombre, Vendedor nif, Vendedor codigo, Vendedor explotacion");
+            grid.attachHeader("#text_filter,#text_filter,#text_filter,#text_filter,#text_filter,#text_filter,#text_filter,#text_filter,#text_filter,#text_filter");
+            grid.setColSorting("str,str,str,str,str,str,str,str,str,str");
+            grid.setInitWidths("120,80,50,50,80,50,120,80,80,120");
+            grid.setSkin("dhx_skyblue");
+            grid.init();
+            grid.load("/admins/data.xml");
+        </script>
+        <!--
+        <input type="button" value="Add" onclick="grid.addRow(grid.uid(),'new user')">
+        <input type="button" value="Delete" onclick="grid.deleteSelectedRows()">
+        -->
+    </body>
+</html>

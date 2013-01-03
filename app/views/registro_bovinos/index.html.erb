@@ -1,4 +1,6 @@
-<h1>Listing registro_bovinos</h1>
+<h1>Registro de animales</h1>
+ 
+<%= link_to 'Búsquedas', admins_path %> | <%= link_to 'Añadir animal', new_registro_bovino_path %>
 
 <table>
   <tr>
@@ -32,8 +34,8 @@
 
 <% @registro_bovinos.each do |registro_bovino| %>
   <tr>
-    <td><%= link_to 'Show', registro_bovino %></td>
-    <td><%= link_to 'Edit', edit_registro_bovino_path(registro_bovino) %></td>
+    <td><%= link_to 'Ver', registro_bovino %></td>
+    <td><%= link_to 'Editar', edit_registro_bovino_path(registro_bovino) %></td>
     <td><%= registro_bovino.id %></td>
     <td><%= registro_bovino.crotal %></td>
     <td><%= registro_bovino.nacimiento %></td>
@@ -55,13 +57,13 @@
     <td><%= registro_bovino.traslado_numero %></td>
     <td><%= registro_bovino.balance_fecha %></td>
     <td><%= registro_bovino.balance_numero_cabezas %></td>
-    <td><%= link_to 'Show', registro_bovino %></td>
-    <td><%= link_to 'Edit', edit_registro_bovino_path(registro_bovino) %></td>
-    <td><%= link_to 'Destroy', registro_bovino, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Ver', registro_bovino %></td>
+    <td><%= link_to 'Editar', edit_registro_bovino_path(registro_bovino) %></td>
+    <td><%= link_to 'Borrar', registro_bovino, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Registro bovino', new_registro_bovino_path %>
+<%= link_to 'Añadir animal', new_registro_bovino_path %>

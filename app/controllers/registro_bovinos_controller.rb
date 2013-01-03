@@ -2,7 +2,7 @@ class RegistroBovinosController < ApplicationController
   # GET /registro_bovinos
   # GET /registro_bovinos.json
   def index
-    @registro_bovinos = RegistroBovino.all
+    @registro_bovinos = RegistroBovino.all(:order => "id desc")
 
     respond_to do |format|
       format.html # index.html.erb

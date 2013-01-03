@@ -1,3 +1,23 @@
+<link rel="stylesheet" type="text/css" href="/javascripts/codebase/dhtmlxcalendar.css"/>
+<link rel="stylesheet" type="text/css" href="/javascripts/codebase/skins/dhtmlxcalendar_dhx_skyblue.css"/>
+<script src="/javascripts/codebase/dhtmlxcalendar.js"></script>
+<script>
+  dhtmlXCalendarObject.prototype.langData["es"] = {
+      //dateformat: '%d.%m.%Y',
+      monthesFNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+      monthesSNames: ["Ene", "Feb", "Mar", "Abr", "Мay", "Jun", "Jul", "Аgo", "Sep", "Oct", "Nov", "Dic"],
+      daysFNames: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+      daysSNames: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+      weekstart: 1
+  } 
+  function doOnLoad() {
+      
+      var myCalendar;      
+      myCalendar = new dhtmlXCalendarObject(["registro_bovino_nacimiento","registro_bovino_alta_explotacion","registro_bovino_baja_explotacion"/*,"registro_bovino_balance_fecha"*/]);
+      myCalendar.loadUserLanguage('es');
+  }
+</script>
+
 <%= form_for(@registro_bovino) do |f| %>
   <% if @registro_bovino.errors.any? %>
     <div id="error_explanation">
@@ -26,7 +46,8 @@
   </div>
   <div class="field">
     <%= f.label :nacimiento %><br />
-    <%= f.date_select :nacimiento %>
+    <%= f.text_field :nacimiento %>    
+    <!--<%= f.date_select :nacimiento %>-->    
   </div>
   <div class="field">
     <%= f.label :sexo %><br />
@@ -43,7 +64,8 @@
   </div>
   <div class="field">
     <%= f.label :alta_explotacion %><br />
-    <%= f.date_select :alta_explotacion %>
+    <%= f.text_field :alta_explotacion %>
+    <!--<%= f.date_select :alta_explotacion %>-->
   </div>
   <div class="field">
     <%= f.label :causa_alta %><br />
@@ -77,7 +99,8 @@
   </div>
   <div class="field">
     <%= f.label :baja_explotacion %><br />
-    <%= f.date_select :baja_explotacion, :include_blank => true %>
+    <%= f.text_field :baja_explotacion %>
+    <!--<%= f.date_select :baja_explotacion, :include_blank => true %>-->
   </div>
   <div class="field">
     <%= f.label :causa_baja %><br />
@@ -111,6 +134,7 @@
   </div>
   <div class="field">
     <%= f.label :balance_fecha %><br />
+    <!--<%= f.text_field :balance_fecha %>-->
     <%= f.date_select :balance_fecha %>
   </div>
   <div class="field">
@@ -121,4 +145,6 @@
     <%= f.submit :onmousedown => 'this.title=1', :onclick => 'if(this.title!=1){return false;}' %>    
   </div>
 <% end %>
+<script>window.onload = doOnLoad;</script>
 <!-- <input type="submit" name="mybutton" onmousedown="this.title=1" onclick="if(this.title!=1){return false;}" value="Submit my Form" /> -->
+
